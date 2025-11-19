@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CyberAI Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#">CyberAI Detector</a>
+        <div class="nav-links"></div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Проверяйте сайты на фишинг за секунды</h1>
+          <p class="lead">Вставьте ссылку и получите быстрый анализ: формы, скрытые поля, внешние скрипты и возможные подмены брендов.</p>
+
+          <form id="check-form" class="check-form">
+            <input id="url-input" type="text" placeholder="Введите URL (пример: example.com или https://example.com)" aria-label="URL">
+            <button class="btn" type="submit">Проверить</button>
+          </form>
+
+          <div id="status" class="status">Готово к проверке</div>
+        </div>
+
+        <div class="hero-right">
+          <div id="result-card" class="card hidden">
+              <h3 id="result-title">Результат</h3>
+              <div class="score-row">
+                <div class="score-number" id="score-number">— / 100</div>
+                <div class="score-bar" aria-hidden>
+                  <div id="score-fill" class="score-fill" style="width:0%"></div>
+                </div>
+              </div>
+              <p id="result-text"></p>
+
+              <div id="details" class="details"></div>
+            </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>Что проверяется</h2>
+        <div class="cards">
+          <div class="feature-card">HTTPS и длина URL</div>
+          <div class="feature-card">Формы и поля паролей</div>
+          <div class="feature-card">Внешние скрипты</div>
+          <div class="feature-card">Проверка подмены брендов</div>
+        </div>
+        
+        <h3 style="margin-top:20px">Планы подписки (демо)</h3>
+        <div class="subscriptions">
+          <div class="sub-card">
+            <h4>Free</h4>
+            <div class="sub-list">
+              • Базовая проверка URL<br>
+              • Оповещения в UI<br>
+              • Ограниченная история проверок
+            </div>
+          </div>
+          <div class="sub-card">
+            <h4>Pro</h4>
+            <div class="sub-list">
+              • Всё из Free<br>
+              • История проверок 90 дней<br>
+              • Приоритетная обработка
+            </div>
+          </div>
+          <div class="sub-card">
+            <h4>Enterprise</h4>
+            <div class="sub-list">
+              • Всё из Pro<br>
+              • Интеграции API и SSO<br>
+              • SLA и поддержка
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  </body>
+</html>
